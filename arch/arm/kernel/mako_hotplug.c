@@ -182,7 +182,7 @@ static void __cpuinit mako_hotplug_late_resume(struct early_suspend *handler)
     queue_delayed_work(wq, &decide_hotplug, HZ);
 }
 
-static struct early_suspend mako_hotplug_suspend =
+static struct early_suspend mako_hotplug_suspenddriver =
 {
     .level = EARLY_SUSPEND_LEVEL_BLANK_SCREEN + 1,
 	.suspend = mako_hotplug_early_suspend,
@@ -241,7 +241,7 @@ int __init mako_hotplug_init(void)
     INIT_DELAYED_WORK(&decide_hotplug, decide_hotplug_func);
     queue_delayed_work(wq, &decide_hotplug, HZ*25);
     
-    register_early_suspend(&mako_hotplug_suspend);
+    register_early_suspend(&mako_hotplug_suspenddriver);
     
     return 0;
 }

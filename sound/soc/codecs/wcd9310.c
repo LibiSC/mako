@@ -8408,12 +8408,12 @@ void update_headset_volume_boost(int vol_boost)
 	right_headset_mixer->platform_max = HEADSET_MAX_DEFAULT + vol_boost;
 	right_headset_mixer->max = HEADSET_MAX_DEFAULT + vol_boost;
 	right_headset_mixer->min = HEADSET_MIN_DEFAULT + vol_boost;
-	pr_info("Right headset max: %d - Right headset min: %d\n", right_headset_mixer->max, right_headset_mixer->min);
+	printf("Right headset max: %d - Right headset min: %d\n", right_headset_mixer->max, right_headset_mixer->min);
 
 	left_headset_mixer->platform_max = HEADSET_MAX_DEFAULT + vol_boost;
 	left_headset_mixer->max = HEADSET_MAX_DEFAULT + vol_boost;
 	left_headset_mixer->min = HEADSET_MIN_DEFAULT + vol_boost;
-	pr_info("Left headset max: %d - Left headset min: %d\n", left_headset_mixer->max, left_headset_mixer->min);
+	printf("Left headset max: %d - Left headset min: %d\n", left_headset_mixer->max, left_headset_mixer->min);
 }
 #endif
 
